@@ -1,0 +1,135 @@
+/* ========== THEME ========== */
+
+:root{
+--bg:#0b0e14;
+--panel:#121723;
+--panel2:#161c2e;
+--accent:#4f7cff;
+--text:#e6e8ee;
+--muted:#9aa1b2;
+--radius:14px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Inter,sans-serif;
+background:var(--bg);
+color:var(--text);
+min-height:100vh;
+}
+
+/* ========== TOP ========== */
+
+.top-bar{
+background:var(--panel2);
+padding:10px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #1c2340;
+}
+
+.logo{
+font-size:20px;
+font-weight:600;
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:12px;
+color:var(--muted);
+}
+
+.profile img{
+width:32px;
+height:32px;
+border-radius:50%;
+border:2px solid var(--accent);
+}
+
+/* ========== NAV ========== */
+
+.nav-bar{
+display:flex;
+gap:20px;
+padding:14px 40px;
+background:var(--panel);
+border-bottom:1px solid #1c2340;
+}
+
+.nav-item{
+color:var(--muted);
+text-decoration:none;
+padding:6px 12px;
+border-radius:8px;
+}
+
+.nav-item.active{
+background:var(--accent);
+color:#fff;
+}
+
+/* ========== MAIN ========== */
+
+main{
+padding:40px;
+max-width:1100px;
+margin:auto;
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.title p{
+color:var(--muted);
+margin-top:6px;
+}
+
+/* ========== GRID ========== */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+/* ========== CARDS ========== */
+
+.card{
+background:var(--panel);
+padding:26px;
+border-radius:var(--radius);
+border:1px solid #1c2340;
+}
+
+.card h3{
+margin-bottom:14px;
+}
+
+/* ========== BAR ========== */
+
+.bar{
+height:14px;
+background:#0f1530;
+border-radius:10px;
+overflow:hidden;
+margin:8px 0;
+border:1px solid #1c2340;
+}
+
+.fill{
+height:100%;
+background:linear-gradient(90deg,#4f7cff,#6fa3ff);
+border-radius:10px;
+}
+
+.stat{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+color:var(--muted);
+}

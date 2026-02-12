@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PCPartsHub Pro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<!-- TOP -->
+<div class="top-bar">
+  <div class="logo">PCPartsHub</div>
+  <div class="profile">
+    <img src="https://i.pravatar.cc/36" alt="profile" />
+    Ahmed
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <a class="nav-item active">Builder</a>
+  <a href="pcready.html" class="nav-item">Completed</a>
+  <a href="Graph.html" class="nav-item">Graphs</a>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+  <h2>Advanced PC Builder</h2>
+  <div class="budget">
+  <span class="budget-label">Budget DH</span>
+  <input id="budgetInput" type="number" value="15000" />
+</div>
+
+</div>
+
+<!-- MAIN -->
+<main>
+  <!-- PARTS -->
+  <section class="parts">
+    <h3>Configuration</h3>
+
+    <div class="row" data-part="cpu">
+      <div class="label">CPU</div>
+      <div class="choose" onclick="openModal(this)">Choose</div>
+      <button class="remove-btn" title="Remove" onclick="removeSelected(event,'cpu')">✕</button>
+      <div id="cpuP" class="price">—</div>
+    </div>
+
+    <div class="row" data-part="mb">
+      <div class="label">Motherboard</div>
+      <div class="choose" onclick="openModal(this)">Choose</div>
+      <button class="remove-btn" title="Remove" onclick="removeSelected(event,'mb')">✕</button>
+      <div id="mbP" class="price">—</div>
+    </div>
+
+    <div class="row" data-part="gpu">
+      <div class="label">GPU</div>
+      <div class="choose" onclick="openModal(this)">Choose</div>
+      <button class="remove-btn" title="Remove" onclick="removeSelected(event,'gpu')">✕</button>
+      <div id="gpuP" class="price">—</div>
+    </div>
+
+    <div class="row" data-part="ram">
+      <div class="label">RAM</div>
+      <div class="choose" onclick="openModal(this)">Choose</div>
+      <button class="remove-btn" title="Remove" onclick="removeSelected(event,'ram')">✕</button>
+      <div id="ramP" class="price">—</div>
+    </div>
+
+    <div class="row" data-part="storage">
+      <div class="label">Storage</div>
+      <div class="choose" onclick="openModal(this)">Choose</div>
+      <button class="remove-btn" title="Remove" onclick="removeSelected(event,'storage')">✕</button>
+      <div id="storageP" class="price">—</div>
+    </div>
+
+    <div class="row" data-part="psu">
+      <div class="label">PSU</div>
+      <div class="choose" onclick="openModal(this)">Choose</div>
+      <button class="remove-btn" title="Remove" onclick="removeSelected(event,'psu')">✕</button>
+      <div id="psuP" class="price">—</div>
+    </div>
+
+    <div class="row" data-part="case">
+      <div class="label">Case</div>
+      <div class="choose" onclick="openModal(this)">Choose</div>
+      <button class="remove-btn" title="Remove" onclick="removeSelected(event,'case')">✕</button>
+      <div id="caseP" class="price">—</div>
+    </div>
+
+    <button class="clear" id="clearBtn">Clear configuration</button>
+  </section>
+
+  <!-- SUMMARY -->
+  <aside class="summary">
+    <h3>Summary</h3>
+
+    <div class="total">
+      <span>Total</span>
+      <span id="totalEl">0 DH</span>
+    </div>
+
+    <div class="box" id="compatBox">Compatibility: —</div>
+    <div class="box" id="powerBox">Power: —</div>
+
+    <div class="summary-actions">
+      <button class="btn check" id="checkBtn">Check</button>
+      <button class="btn save" id="saveBtn">Save</button>
+    </div>
+  </aside>
+</main>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-top">
+      <div class="modal-title" id="modalTitle">Select</div>
+      <button class="modal-x" id="modalCloseBtn" type="button">✕</button>
+    </div>
+
+    <div class="modal-controls">
+      <input id="searchInput" type="text" placeholder="Search (e.g. RTX, Ryzen, DDR5, MSI)" />
+      <select id="brandFilter"></select>
+      <input id="maxPriceInput" type="number" placeholder="Max price (DH)" />
+      <select id="sortSelect">
+        <option value="rec">Recommended</option>
+        <option value="plh">Price: Low → High</option>
+        <option value="phl">Price: High → Low</option>
+      </select>
+    </div>
+
+    <div class="modal-meta">
+      <span id="resultsMeta">0 results</span>
+      <span>Click a card to select</span>
+    </div>
+
+    <div class="modal-grid" id="modalGrid"></div>
+  </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

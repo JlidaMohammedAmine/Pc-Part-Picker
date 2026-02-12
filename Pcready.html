@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PC Ready</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="pcready.css">
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="logo">PCPartsHub</div>
+  <div class="profile">
+    <img src="https://i.pravatar.cc/32" alt="Profile" />
+    Ahmed
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-item">Builder</a>
+  <a href="pcready.html" class="nav-item active">Completed Builds</a>
+  <a href="graph.html" class="nav-item">Graphs</a>
+</nav>
+
+<!-- Add Button -->
+<div class="add-section">
+  <button class="add-btn" id="openModalBtn">+ Add PC</button>
+</div>
+
+<!-- Layout -->
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <h3>Filters</h3>
+
+    <div class="filter">
+      <label for="priceFilter">Max Price (DH)</label>
+      <input type="range" min="1000" max="30000" value="1500" id="priceFilter" />
+      <small id="priceValue">DH 1500</small>
+    </div>
+
+    <div class="filter">
+      <label for="conditionFilter">Condition</label>
+      <select id="conditionFilter">
+        <option value="all">All</option>
+        <option value="New">New</option>
+        <option value="Used">Used</option>
+      </select>
+    </div>
+
+    <div class="filter">
+      <label for="usageFilter">Usage</label>
+      <select id="usageFilter">
+        <option value="all">All</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Office">Office</option>
+        <option value="Work">Work</option>
+      </select>
+    </div>
+
+    <div class="filter">
+      <label for="sortFilter">Sort</label>
+      <select id="sortFilter">
+        <option value="newest">Newest</option>
+        <option value="cheapest">Cheapest</option>
+        <option value="oldest">Oldest</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Main -->
+  <div class="main" id="pcList">
+
+    <div class="empty-box" id="emptyMessage">
+      <h2>No PCs Available</h2>
+      <p>No PC catalogue is available right now.</p>
+      <p>Add one to get started.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="pcModal">
+  <div class="modal-content">
+    <h2>Add New PC Build</h2>
+    <label for="pcName">Label / Name</label>
+    <input type="text" id="pcName" placeholder="Enter PC name" required />
+
+    <label for="pcImage">Image URL</label>
+    <input type="url" id="pcImage" placeholder="Enter image URL" required />
+
+    <label for="pcPrice">Price (DH)</label>
+    <input type="number" id="pcPrice" placeholder="Enter price" min="0" required />
+
+    <label for="pcDesc">Description</label>
+    <textarea id="pcDesc" placeholder="Enter description (optional)"></textarea>
+
+    <label for="pcCondition">Condition</label>
+    <select id="pcCondition">
+      <option value="New">New</option>
+      <option value="Used">Used</option>
+    </select>
+
+    <label for="pcUsage">Usage</label>
+    <select id="pcUsage">
+      <option value="Gaming">Gaming</option>
+      <option value="Office">Office</option>
+      <option value="Work">Work</option>
+    </select>
+
+    <div class="modal-buttons">
+      <button class="btn-cancel" id="cancelBtn">Cancel</button>
+      <button class="btn-submit" id="submitBtn">Add Build</button>
+    </div>
+  </div>
+</div>
+
+<script src="pcready.js"></script>
+</body>
+</html>
